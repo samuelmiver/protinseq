@@ -1,7 +1,7 @@
 ---
 
 <p align="center">
-  <img src=".logo.png"/>
+  <img src="protinseq.png"/>
 </p>
 
 A transposon sequencing protocol that selects insertions in-frame to expressed genes
