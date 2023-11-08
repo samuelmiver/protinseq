@@ -83,6 +83,28 @@ If you experience any problem at any step involving the program, you can use the
 [Lluch-Senar, Maria](mailto:maria.lluch@crg.eu)           
 [Serrano, Luis](mailto:luis.serrano@crg.eu)
 
+## To include
+Required content
+Compiled standalone software and/or source code
+A small (simulated or real) dataset to demo the software/code
+A README file that includes:
+1. System requirements
+All software dependencies and operating systems (including version numbers)
+Versions the software has been tested on
+Any required non-standard hardware
+2. Installation guide
+Instructions
+Typical install time on a "normal" desktop computer
+3. Demo
+Instructions to run on data
+Expected output
+Expected run time for demo on a "normal" desktop computer
+4. Instructions for use
+How to run the software on your data
+(OPTIONAL) Reproduction instructions
+
+
+
 ## License
 
 FASTQINS is under a common GNU GENERAL PUBLIC LICENSE. Plese, check [LICENSE](./LICENSE) for further information.
