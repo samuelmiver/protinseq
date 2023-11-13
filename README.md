@@ -4,45 +4,22 @@
   <img src="protinseq.png"/>
 </p>
 
-A transposon sequencing protocol that selects insertions in-frame to expressed genes
+A transposon sequencing protocol that selects insertions in-frame to expressed genes.
 
-## Requirements
-Specific libraries are required by FASTQINS. We provide a [requirements](./requirements.txt) file to install everything at once. To do so, you will need first to have [pip](https://pip.pypa.io/en/stable/installing/) installed and then run:
+# Workflow 
 
-```bash
-pip3 --version                      # Check if installed
-sudo apt-get install python3-pip    # if you need to install pip, you can check installation with the previous command
-pip3 install -r requirements.txt
+## 1. Insertion calling 
 
-```
+Once the Tn-Seq data is produced with the modified transposon, these can be normaly processed using your favorite insertion caller to retrieve the genome positions contiguous to the Inverted Repeat (IR) used. 
 
-
-In addition, we have as dependencies standard tools commonly used in high-throughput sequencing analysis:
+We recommend the use of [FASTQINS](https://github.com/CRG-CNAG/fastqins). Please follow the previous link for details on the installation of this tools. Keep in mind specific libraries are required by this tool, including standard tools commonly used in high-throughput sequencing analysis:
 
   [Fastuniq](https://sourceforge.net/projects/fastuniq/) <br /> 
   [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml)<br />
   [Samtools](http://www.htslib.org/)<br/>
   [Bedtools](https://bedtools.readthedocs.io/en/latest/)
 
-Path to these dependencies can still be defined by the user editing the file [dependencies](./fastqins/dependencies.py) and reinstalling FASTQINS.
-
-## Installation & Help
-
-Download this repository and run:
-
-```bash
-python3 setup.py install
-```
-
-You may require to call it using sudo. Once installed, `fastqins` should be available anywhere in your terminal.
-
-In the case you need to install the package in a specific directory of your system, you can call the argument *--install-lib* followed by a directory path:
-
-```bash
-python3 setup.py install --install-lib /custom/path/
-```
-
-## Example
+### Example on how to run FASTQINS for ProTInSeq
 
 Requirements to run an experiment are: 
 
@@ -51,7 +28,7 @@ Requirements to run an experiment are:
   -g [genome sequence, fasta or genbank format]  <br />
   -o [output directory to locate the results]
 
-As example, we included a pair of files that you can use to test the pipeline functioning as:
+As example, a pair of files that you can use to test the pipeline are included in the repository:
 
 ```bash
 fastqins -i ./test/test_read2.fastq.gz -i2 ./test/test_read1.fastq.gz -t TACGGACTTTATC -g ./test/NC_000912.fna -o test -v -r 0
@@ -62,9 +39,7 @@ To see additional arguments:
 fastqins --help
 ```
 
-You can see [here](./test/output_test/test_read2.svg) a flowchart of how FASTQINS works.
-
-##  Output Information:
+### Output Information:
 
 The following files are generated as default output:
 - \*_fw.qins - read counts of insertions mapping to forward strand \[[example](./test/output_test/test_read2_fw.qins)\]
@@ -73,41 +48,55 @@ The following files are generated as default output:
 - \*.bam - file generated with the aligned reads
 - \*.log - log file with general features of the process run \[[example](./test/output_test/test_read2.log)\]
 
-## Contact
+## 2. Analysis of the insertion profiles
+
+For control libraries, no difference is expected. Please refer to our previous publication [FASTQINS and ANUBIS: two bioinformatic tools to explore facts and artifacts in transposon sequencing and essentiality studies](https://academic.oup.com/nar/article/48/17/e102/5894413) to follow the best practices in analyzing this data. 
+
+We recommend [ANUBIS](https://github.com/CRG-CNAG/anubis) for the analysis of this type of data. However, simple data analysis can be performed to extract a relation of genomic annotations and relevant metrics by frame. We have included a set of useful functions in the file [protinseq.py](./protinseq.py). 
+
+A small demonstration on how to apply them is included in [demonstration](./demonstration.ipynb). 
+
+### Output examples:
+
+By running the previous notebook you can obtain:
+
+- Table with metrics by genomic annotation including genes, smORFs and intergenic regions (used as control)
+- Basic plotting of loci of interest coloring insertions by frame:
+
+# System requirements
+
+No special system requirements are required to run this pipelines. The presented analysis has been run in a Linux operative system and tested in MacOS and Windows running WSL. We expect a Python 3.6 or higher version to run the processes. 
+
+# Contact
 
 This project has been fully developed at [Centre for Genomic Regulation](http://www.crg.eu/) at the group of [Design of Biological Systems](http://www.crg.eu/en/luis_serrano).
 
 If you experience any problem at any step involving the program, you can use the 'Issues' page of this repository or contact:
 
-[Miravet-Verde, Samuel](mailto:samuel.miravet@crg.eu)         
-[Lluch-Senar, Maria](mailto:maria.lluch@crg.eu)           
+[Miravet-Verde, Samuel](mailto:smiravet@ethz.ch)         
 [Serrano, Luis](mailto:luis.serrano@crg.eu)
 
+
 ## To include
+
 Required content
 Compiled standalone software and/or source code
 A small (simulated or real) dataset to demo the software/code
 A README file that includes:
-1. System requirements
-All software dependencies and operating systems (including version numbers)
-Versions the software has been tested on
-Any required non-standard hardware
-2. Installation guide
-Instructions
-Typical install time on a "normal" desktop computer
-3. Demo
 Instructions to run on data
 Expected output
 Expected run time for demo on a "normal" desktop computer
-4. Instructions for use
-How to run the software on your data
-(OPTIONAL) Reproduction instructions
 
+# Citation
 
+If you use the tools and workflow presented in this repository, please cite:
 
-## License
+- [FASTQINS and ANUBIS: two bioinformatic tools to explore facts and artifacts in transposon sequencing and essentiality studies](https://academic.oup.com/nar/article/48/17/e102/5894413)
+- ProTInSeq: transposon insertion tracking by ultra-deep DNA sequencing applied to identify small and large translated ORFs.
 
-FASTQINS is under a common GNU GENERAL PUBLIC LICENSE. Plese, check [LICENSE](./LICENSE) for further information.
+# License
 
-###### [2020] - Centre de Regulació Genòmica (CRG) - All Rights Reserved*
+ProTInSeq is under a common GNU GENERAL PUBLIC LICENSE. Plese, check [LICENSE](./LICENSE) for further information.
+
+###### [2023] - Centre de Regulació Genòmica (CRG) - All Rights Reserved*
 
