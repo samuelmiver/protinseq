@@ -1,0 +1,7 @@
+tmhmm
+numpy
+pandas
+seaborn
+matplotlib
+ruptures
+scipy

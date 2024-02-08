@@ -1,7 +1,7 @@
 ---
 
 <p align="center">
-  <img src="protinseq.png"/>
+  <img src="./images/protinseq.png"/>
 </p>
 
 A transposon sequencing protocol that selects insertions in-frame to expressed genes.
@@ -54,7 +54,12 @@ For control libraries, no difference is expected. Please refer to our previous p
 
 We recommend [ANUBIS](https://github.com/CRG-CNAG/anubis) for the analysis of this type of data. However, simple data analysis can be performed to extract a relation of genomic annotations and relevant metrics by frame. We have included a set of useful functions in the file [protinseq.py](./protinseq.py). 
 
-A small demonstration on how to apply them is included in [demonstration](./demonstration.ipynb). 
+A small demonstration on how to apply them is included in [demonstration](./protinseq_analysis.ipynb). 
+
+Please ensure you have the most recent installation of the packages in the [requirements](./requirements.txt) by:
+```bash
+pip install -r requirements.txt
+```
 
 ### Output examples:
 
@@ -76,27 +81,16 @@ If you experience any problem at any step involving the program, you can use the
 [Miravet-Verde, Samuel](mailto:smiravet@ethz.ch)         
 [Serrano, Luis](mailto:luis.serrano@crg.eu)
 
-
-## To include
-
-Required content
-Compiled standalone software and/or source code
-A small (simulated or real) dataset to demo the software/code
-A README file that includes:
-Instructions to run on data
-Expected output
-Expected run time for demo on a "normal" desktop computer
-
 # Citation
 
 If you use the tools and workflow presented in this repository, please cite:
 
 - [FASTQINS and ANUBIS: two bioinformatic tools to explore facts and artifacts in transposon sequencing and essentiality studies](https://academic.oup.com/nar/article/48/17/e102/5894413)
-- ProTInSeq: transposon insertion tracking by ultra-deep DNA sequencing applied to identify small and large translated ORFs.
+- ProTInSeq: transposon insertion tracking by ultra-deep DNA sequencing to identify translated large and small ORFs
 
 # License
 
 ProTInSeq is under a common GNU GENERAL PUBLIC LICENSE. Plese, check [LICENSE](./LICENSE) for further information.
 
-###### [2023] - Centre de Regulació Genòmica (CRG) - All Rights Reserved*
+###### [2024] - Centre de Regulació Genòmica (CRG) - All Rights Reserved*
 
