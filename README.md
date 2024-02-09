@@ -65,8 +65,11 @@ pip install -r requirements.txt
 
 By running the previous notebook you can obtain:
 
+- Comprehensive omics information for *M. pneumoniae*.
+- Sample exploration.
 - Table with metrics by genomic annotation including genes, smORFs and intergenic regions (used as control)
-- Basic plotting of loci of interest coloring insertions by frame:
+- Basic plotting of loci of interest coloring insertions by frame.
+- Metagene exploration.
 
 # System requirements
 
