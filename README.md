@@ -73,7 +73,7 @@ By running the previous notebook you can obtain:
 
 # System requirements
 
-No special system requirements are required to run this pipelines. The presented analysis has been run in a Linux operative system and tested in MacOS and Windows running WSL. We expect a Python 3.6 or higher version to run the processes. 
+No special system requirements are required to run these pipelines. The presented analysis has been run in a Linux operative system and tested in MacOS and Windows running WSL. We expect a Python 3.6 or higher version to run the processes. 
 
 # Contact
 
@@ -89,7 +89,7 @@ If you experience any problem at any step involving the program, you can use the
 If you use the tools and workflow presented in this repository, please cite:
 
 - [FASTQINS and ANUBIS: two bioinformatic tools to explore facts and artifacts in transposon sequencing and essentiality studies](https://academic.oup.com/nar/article/48/17/e102/5894413)
-- ProTInSeq: transposon insertion tracking by ultra-deep DNA sequencing to identify translated large and small ORFs
+- [ProTInSeq: transposon insertion tracking by ultra-deep DNA sequencing to identify translated large and small ORFs](https://www.nature.com/articles/s41467-024-46112-2)
 
 # License
 
