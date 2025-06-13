@@ -19,6 +19,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import poisson, binned_statistic, norm, lognorm
 
+###########
+# Define global tmhmm model path 
+tmhmm_dir = os.path.dirname(tmhmm.__file__)
+model_path = os.path.join(tmhmm_dir, 'TMHMM2.0.model')
 
 ###########
 
@@ -52,7 +56,7 @@ def check_frame(ins, start, strand='pos'):
         return {0:3, 2:2, 1:1}[f]
     
 def predict_tm(aa_sequence, posterior=False):
-    return tmhmm.predict(aa_sequence, header='', model_or_filelike='/home/smiravet/software_crg/tmhmm.py-master/tmhmm/TMHMM2.0.model', compute_posterior=posterior)
+    return tmhmm.predict(aa_sequence, header='', model_or_filelike=model_path, compute_posterior=posterior)
 
 def tm2nttm(aa_sequence, posterior=False):
     return ''.join([i*3 for i in predict_tm(aa_sequence, posterior=posterior)])
@@ -502,9 +506,9 @@ def psplot(coords,
             subann['color'] = subann['frame'].map(colord)
             ys = []
             for altname, fr in zip(list(subann['alt_ann']), list(subann['frame'])):
-                if altname==0:
+                if altname=='0':
                     ys.append(fr+3)
-                elif altname==-1:
+                elif altname=='-1':
                     ys.append(fr)
                 else:
                     ys.append(fr+6)
