@@ -506,9 +506,9 @@ def psplot(coords,
             subann['color'] = subann['frame'].map(colord)
             ys = []
             for altname, fr in zip(list(subann['alt_ann']), list(subann['frame'])):
-                if altname=='0':
+                if str(altname)=='0':
                     ys.append(fr+3)
-                elif altname=='-1':
+                elif str(altname)=='-1':
                     ys.append(fr)
                 else:
                     ys.append(fr+6)
