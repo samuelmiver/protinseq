@@ -34,6 +34,13 @@ As example, a pair of files that you can use to test the pipeline are included i
 fastqins -i ./test/test_read2.fastq.gz -i2 ./test/test_read1.fastq.gz -t TACGGACTTTATC -g ./test/NC_000912.fna -o test -v -r 0
 ```
 
+To reproduce the same profiles described in the publication, the `awk` insertion calling should be employed:
+
+```bash
+fastqins -i ./test/test_read2.fastq.gz -i2 ./test/test_read1.fastq.gz -t TACGGACTTTATC -g ./test/NC_000912.fna -o test -v -r 0 -ic awk
+```
+
+
 To see additional arguments:
 ```bash
 fastqins --help
