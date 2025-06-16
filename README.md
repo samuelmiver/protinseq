@@ -12,7 +12,7 @@ A transposon sequencing protocol that selects insertions in-frame to expressed g
 
 Once the Tn-Seq data is produced with the modified transposon, these can be normaly processed using your favorite insertion caller to retrieve the genome positions contiguous to the Inverted Repeat (IR) used. 
 
-We recommend the use of [FASTQINS](https://github.com/CRG-CNAG/fastqins). Please follow the previous link for details on the installation of this tools. Keep in mind specific libraries are required by this tool, including standard tools commonly used in high-throughput sequencing analysis:
+For the associated publication, we used the scripts found in the [legacy folder](./legacy). However, in the process of publication, we also developed [FASTQINS](https://github.com/CRG-CNAG/fastqins) to run the same pipeline in a more reproducible, custom and quick manner. Please follow the previous link for details on the installation of this tools. Keep in mind specific libraries are required by this tool, including standard tools commonly used in high-throughput sequencing analysis:
 
   [Fastuniq](https://sourceforge.net/projects/fastuniq/) <br /> 
   [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml)<br />
